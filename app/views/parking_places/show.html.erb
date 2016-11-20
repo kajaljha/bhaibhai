@@ -1,0 +1,52 @@
+<div style = "padding-left: 200px;">
+<p id="notice"><%= notice %></p>
+
+<div class="table-title">
+  <h3>Parking place Details</h3>
+</div><br/>
+<p>
+  <strong>City name :</strong>
+  <%= @parking_place.city %>
+</p>
+
+<p>
+  <strong>State name :</strong>
+  <%= @parking_place.state %>
+</p>
+
+<p>
+  <strong>Zip code :</strong>
+  <%= @parking_place.zip %>
+</p>
+
+<p>
+  <strong>Address :</strong>
+  <%= @parking_place.address %>
+</p>
+
+<p>
+  <strong>Woner name :</strong>
+  <%= @parking_place.owner_name %>
+</p>
+
+<p>
+  <strong>Owner cell number :</strong>
+  <%= @parking_place.owner_number %>
+</p>
+
+<p>
+  <strong>Total spaces :</strong>
+  <%= @parking_place.total_spaces %>
+</p>
+
+<p>
+  <strong>Available spaces :</strong>
+  <%= @parking_place.avail_spaces %>
+</p>
+
+<% if @parking_place.user == current_user %>
+  <%= link_to 'Edit', edit_parking_place_path(@parking_place) %> |
+  <%= link_to 'Back', parking_places_path %>
+<%end%>
+</div>
+
