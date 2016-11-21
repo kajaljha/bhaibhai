@@ -23,6 +23,12 @@
 
       <div class="row">
         <div class="col-md-4 col-sm-4 col-lg-4">
+          <label for="Price">Days</label>
+          <%= f.select :days, options_for_select(ParkingPlace::DAYS, f.object.days),{},{multiple: true, :required => true, :oninvalid => "setCustomValidity('Select days ')", :onchange =>"try{setCustomValidity('')}catch(e){}",:id => 'select2', class: "form-control"} %>
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-lg-4">
           <label for="Price">Class Name</label>
           <%= f.text_field :class_name, class: "form-control", placeholder: "Enter class name" %>
         </div>            
@@ -208,4 +214,10 @@
       return false;
     }
   }
+
+
+  $("#select2").select2({
+    placeholder: "select days",
+    tags: true
+  });
 </script>

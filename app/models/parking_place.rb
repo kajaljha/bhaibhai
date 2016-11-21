@@ -8,8 +8,10 @@ class ParkingPlace < ApplicationRecord
   scope :only_available_places, -> {where(availability_status: true)}
 
   geocoded_by :full_address
+  serialize :days, Array
   
-  
+  DAYS = [['Sunday', 'sunday'], ['Monday', 'monday'], ['Tuesday', 'tuesday'], ['Wednesday', 'wednesday'], ['Thursday', 'thursday'], ['Friday', 'friday'], ['Saturday', 'saturday']]
+
   after_validation :geocode,
   :if => lambda{ |obj| obj.full_address_changed? }
   

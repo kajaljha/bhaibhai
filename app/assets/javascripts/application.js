@@ -17,6 +17,7 @@
 //= require dataTables/jquery.dataTables
 //= require bootstrap-sprockets
 //= require moment
+//= require select2
 //= require bootstrap-datetimepicker
 //= require_tree .
 

@@ -22,6 +22,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 gem 'carrierwave'
+gem 'select2-rails'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
