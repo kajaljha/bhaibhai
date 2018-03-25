@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :feedbacks
   
   def as_json(options={})
-    super(:only => [:auth_token, :name, :email], :methods => [:image_file_for_api])
+    super(:only => [:id, :name, :email])
   end
 
   def generate_auth_token(token)
