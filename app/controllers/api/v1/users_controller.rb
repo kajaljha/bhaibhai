@@ -35,7 +35,7 @@ class Api::V1::UsersController < Api::V1::ApiController
   def user_signup
     user = User.new(user_params)
     if user.save
-      render json: { response: {token: user.auth_token} , status: true, error: [] }
+      render json: { response: {id: user.id} , status: true, error: [] }
     else
       render json: { response: {} , status: false, error: user.errors.full_messages }
     end
@@ -72,7 +72,7 @@ class Api::V1::UsersController < Api::V1::ApiController
     user = User.find_by_email(user_params[:email])
     if user && user.valid_password?(user_params[:password])
       session[:user_id] = user.id
-      user.update_user_auth_token
+      #user.update_user_auth_token
       render json: { response: user.as_json , status: true, error: [] }
     else
       render json: { response: [] , status: false, error: ["Invalid email or password"] }
