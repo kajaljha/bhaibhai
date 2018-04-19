@@ -20,4 +20,7 @@ class VisitorsController < ApplicationController
   def parking_places_list
     @parking_places = ParkingPlace.all
   end
+
+  def kajal
+  end
 end
