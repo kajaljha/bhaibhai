@@ -23,4 +23,6 @@ class VisitorsController < ApplicationController
 
   def kajal
   end
+  def kajal1
+  end
 end
